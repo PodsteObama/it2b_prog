@@ -187,6 +187,25 @@ X  X
   X
   ```
 
+---
+
+## Úlohy – Listy
+
+### 17. Odstranění hodnoty
+Vytvoř funkci, která na vstupu dostane list a hodnotu listu. Následně z listu odstranění veškeré výskyty této hodnoty.
+
+### 18. Databáze filmů (List)
+Vytvoř aplikaci:
+
+Použij dva listy:
+- názvy filmů (`List<string>`)
+- hodnocení (`List<double>`)
+
+Program musí umět:
+- přidat film
+- vypsat filmy podle roku / názvu
+- spočítat průměrné hodnocení
+- smazat film podle názvu
   
 ---
 
