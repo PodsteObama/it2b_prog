@@ -1,0 +1,46 @@
+class Program
+{
+
+    static List<int> SelectionSort(List<int> list)
+    {
+        // zniči původní list
+        List<int> sorted = new List<int>();
+        int min, len = list.Count;
+
+        for (int i = 0; i < len; i++) {
+            min = list.Min();
+            sorted.Add(min);
+            list.Remove(min);
+        }
+
+        return sorted;
+    }
+
+    static List<int> StalinSort(List<int> list)
+    {
+        List<int> sorted = new List<int>();
+        int comrade = list[0];
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i] >= comrade)
+            {
+                sorted.Add(list[i]);
+                comrade = list[i];
+            }
+        }
+
+        return sorted;
+    }
+
+    static void Main()
+    {
+        List<int> list = new List<int> { 18, 8, 5, 24, 0, 67};
+        List<int> sorted = StalinSort(list);
+
+        Console.Write("Serazeno:");
+        foreach (int s in sorted) { 
+            Console.Write(" " + s);
+        }
+    }
+}
