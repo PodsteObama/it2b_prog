@@ -1,0 +1,44 @@
+public class BankUcet
+{
+    public string Name { get; set; }
+    private string Heslo;
+    private double Balance;
+
+    public BankUcet(string name, string heslo, double balance = 0)
+      // balance má defaultní hodnotu -> může a nemusí být zadán
+    {
+        Name = name;
+        Heslo = heslo;
+        Balance = balance;
+    }
+
+    public double ZjistiBalance(string heslo)
+    {
+        if (heslo == Heslo)
+        {
+            return Balance;
+        }
+
+        return -1;
+    }
+
+    public bool Vyber(string heslo, double vyber)
+    {
+        if (heslo == Heslo && vyber <= Balance && vyber > 0)
+        {
+            Console.WriteLine($"Vybráno {vyber} Kč");
+            Balance -= vyber;
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Vklad(double castka)
+    {
+        if (castka > 0)
+        {
+            Balance += castka;
+        }
+    }
+}
